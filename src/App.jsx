@@ -1,51 +1,21 @@
-import React from "react";
+import { Route, Routes, Navigate } from "react-router-dom";
 import Menu from "./Menu";
-import {Rout, Switch} from "react-router-dom";
+import About from "./About";
+import Component from "./Component";
+import Error from "./Error";
 
 const App = () => {
-
-
-    <Menu/>
-
-
-
-    // const [fullName, setFullName] = useState({
-    //     fname: "",
-    //     lname: ""
-    // });
-
-    // const inputEvent = (e) => {
-    //     const {name, value} = e.target;
-
-    //     setFullName((ele) => {
-    //         return {
-    //             ...fullName,
-    //             [name]: value
-    //         }
-
-    //     })
-    // };
-
-    // const clicked = (e) => {
-    //     e.preventDefault();
-    //     alert("form submitted");
-
-    // }
-
-    // return (
-    //     <>
-    //         <form onSubmit={clicked}>
-    //             <div>
-    //                 <h2> Hello {fullName.fname} {fullName.lname}</h2>
-    //                 <input type="text" placeholder="Enter Yout name" onChange={inputEvent} name="fname" value={fullName.fname} />
-    //                 <input type="text" placeholder="Enter Yout last name" onChange={inputEvent} name="lname" value={fullName.lname} />
-    //                 <button placeholder="click me" type="submit"></button>
-    //             </div>
-    //             <AcUnitIcon />
-    //         </form>
-
-    //     </>
-    // )
-}
+    return (
+        <>
+            <Menu />
+            <Routes>
+                <Route path="/About" element={<About name="xxyyzz" />} />
+                <Route path="/Component" element={<Component name="askkdfj" />} />
+                <Route path="/tryToOpen" element={<Navigate to="/Component" />} />  //if tryToopen path hitten then the path change to componen and shows the Component
+                <Route path="*" element={<Error />} />
+            </Routes>
+        </>
+    );
+};
 
 export default App;

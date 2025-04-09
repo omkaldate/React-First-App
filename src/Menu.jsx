@@ -1,14 +1,14 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Menu = () => {
     return (
         <>
-            <h2>Hellooooo</h2>
-            <Link to="/">About Us</Link>
-            <Link to="/component">Contact Us</Link>
+            <NavLink to="/About">About Us</NavLink>
+            <NavLink to="/Component">Component Us</NavLink>
         </>
     );
 };
 
 export default Menu;
+ 
